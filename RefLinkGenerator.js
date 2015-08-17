@@ -2,7 +2,7 @@
 // @name         RefLinkGenerator
 // @name:zh      引用链接生成器
 // @namespace    http://www.joshuazhang.net
-// @version      1.1
+// @version      1.1.1
 // @description  Generate reference link in all kinds of markup languages like html, markdown etc and copy to system clipboard.
 // @description:zh  提取网页标题和URL，快捷生成各类标记语言引用链接文本并复制到系统剪贴板
 // @homepageURL  https://coding.net/u/joshz/p/RefLinkGenerator/git
@@ -109,7 +109,7 @@ var markup = [ // Specific names for different kinds of markup languages
 $(
     function(){
         $('#rlg-panel').hover(function(){
-            $(this).animate({width:'25%'},500);
+            $(this).animate({width:'30%'},500);
         },function(){
             $(this).animate({width:'2px'},500);
         }).trigger('mouseleave');
@@ -146,7 +146,7 @@ function copy_to_system_clipboard(this_id) { // onclick function for buttons "rl
         var msg = successful ? 'successful' : 'unsuccessful';
         hint_div.setAttribute('style', 'color:lightgreen');
         var markup_tmp = this_id.replace('-button', '').replace('rlg-', '');
-        hint_div.innerHTML = 'Copying ' + markup_tmp + ' link system clipboard was ' + msg;
+        hint_div.innerHTML = 'Copying generated ' + markup_tmp + ' link text to system clipboard was ' + msg;
     } catch (err) {
         hint_div.setAttribute('style', 'color:red');
         hint_div.innerHTML = "Copying to system clipboard is not supported by your browser, you can copy it manually";
