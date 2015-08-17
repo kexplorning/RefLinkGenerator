@@ -1,17 +1,15 @@
 // ==UserScript==
-// @id
 // @name         RefLinkGenerator
 // @name:zh      引用链接生成器
 // @namespace    http://www.joshuazhang.net
-// @version      1.0
-// @description  提取网页标题和URL快捷生成各类标记语言引用链接文本并复制到系统剪贴板
+// @version      1.1
 // @description  Generate reference link in all kinds of markup languages like html, markdown etc and copy to system clipboard.
-
-// homepageURL     //TODO
-// updateURL       //TODO
-// downloadURL     //TODO
-// @homepageURL    //TODO
-// @require        https://code.jquery.com/jquery-1.11.3.min.js
+// @description:zh  提取网页标题和URL，快捷生成各类标记语言引用链接文本并复制到系统剪贴板
+// @homepageURL  https://coding.net/u/joshz/p/RefLinkGenerator/git
+// @downloadURL  https://coding.net/u/joshz/p/RefLinkGenerator/git/raw/master/RefLinkGenerator.js
+// @updateURL    https://coding.net/u/joshz/p/RefLinkGenerator/git/raw/master/RefLinkGenerator.js
+// @supportURL   https://coding.net/u/joshz/p/RefLinkGenerator/topic/all
+// @require      https://code.jquery.com/jquery-1.11.3.min.js
 // @include      http://*
 // @include      https://*
 // @author       joshz
