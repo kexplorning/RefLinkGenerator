@@ -85,7 +85,8 @@ var markup = [ // Specific names for different kinds of markup languages
         button_name: "reST",
         base_id: "rlg-rest",
         makelink: function(page_title, page_url) {
-            return '`' + page_title + '`_  .. _`' + page_title + '`: ' + page_url;
+            return '`' + page_title + ' <' + page_url + '>`_';
+            //return '`' + page_title + '`_  .. _`' + page_title + '`: ' + page_url;
         }
     },
     {   // Org-mode
@@ -100,6 +101,14 @@ var markup = [ // Specific names for different kinds of markup languages
         base_id: "rlg-latex",
         makelink: function(page_title, page_url) {
             return '\\href{' + page_url + '}{' + page_title + '}';
+        }
+    },
+    {
+        // Plain Text
+        button_name: "Plain Text",
+        base_id: "rlg-text",
+        makelink: function(page_title, page_url) {
+            return page_title + ' -> ' + page_url;
         }
     }
 ];
