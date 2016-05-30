@@ -1,4 +1,4 @@
 // TODO 参考Chrome插件Octotree修改自动隐藏侧边栏的样式和动画效率
 // TODO 添加其它常见标记语言的支持：wiki、bbcode、asciidoc、textile、texinfo
 // TODO 写成Chrome插件的形式，参考https://chrome.google.com/webstore/detail/create-link/gcmghdmnkfdbncmnmlkkglmnnhagajbm
-// TODO 页面加载后不要挡住页面元素
+// TODO 有时页面加载缓慢，导致本栏挡住了一些页面元素，如何解决？
