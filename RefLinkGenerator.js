@@ -78,7 +78,7 @@ var markup = [ // Specific names for different kinds of markup languages
         button_name: "Markdown",
         base_id: "rlg-markdown",
         makelink: function(page_title, page_url) {
-            return '[' + page_title + "](" + page_url + " )";
+            return '[' + page_title + "](" + page_url + ' "")';
         }
     },
     {   // reStructured Text
