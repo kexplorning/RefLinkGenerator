@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hi there</title>
+    <style>
+        #rlg-panel {display:inline-block;position:fixed;top:10%;left:0;z-index:100;background:#111;color:#fff;overflow:hidden;}
+        #rlg-panel input{color:#111;margin:2px 8px 2px 8px;border-width:2px;border-color:#32cd32}
+        #rlg-panel a{color:#fff;font-size:14px;text-decoration:none;border-style:solid;border-width:1px;border-color:#32cd32}
+        #rlg-panel div{white-space:nowrap;margin:2px 10px 2px 10px;}
+    </style>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        var markup = [ // Specific names for different kinds of markup languages
+            {   // html
+                button_name: "HTML",
+                base_id: "rlg-html",
+                makelink: function(page_title, page_url) {
+                    return '<a href="' + page_url + '">' + page_title + '<\/a>';
+                }
+            },
+            {   // markdown
+                button_name: "Markdown",
+                base_id: "rlg-markdown",
+                makelink: function(page_title, page_url) {
+                    return '[' + page_title + "](" + page_url + " )";
+                }
+            },
+            {   // reStructured Text
+                button_name: "reST",
+                base_id: "rlg-rest",
+                makelink: function(page_title, page_url) {
+                    return '`' + page_title + '`_  .. _`' + page_title + '`: ' + page_url;
+                }
+            },
+            {   // Org-mode
+                button_name: "Orgmode",
+                base_id: "rlg-orgmode",
+                makelink: function(page_title, page_url) {
+                    return '[[' + page_url + '][' + page_title + ']]';
+                }
+            },
+            {   // LaTeX
+                button_name: "LaTeX",
+                base_id: "rlg-latex",
+                makelink: function(page_title, page_url) {
+                    return '\\href{' + page_url + '}{' + page_title + '}';
+                }
+            }
+        ];
+        $(function(){
+                    $('#rlg-panel').hover
+                    (
+                            function(){$(this).animate({width:'30%'},500);},
+                            function(){$(this).animate({width:'2px'},500);}
+                    ).trigger('mouseleave');
+                    }
+        );
+        function regenerate() {
+            var page_title = document.getElementById("rlg-title-input").value;
+            console.log(page_title);
+            var page_url = window.location.href;
+            console.log(page_url);
+            var id_tmp;
+            for (var i=0; i<markup.length; ++i) {
+                id_tmp=markup[i].base_id;
+                console.log(id_tmp);
+                document.getElementById(id_tmp+'-input').value=markup[i].makelink(page_title, page_url);
+                console.log('modified');
+            }
+        }
+        function copy_to_system_clipboard(this_id) {
+            // https://stackoverflow.com/a/30810322/2709868
+            console.log(this_id);
+            var text_input = document.getElementById(this_id.replace('-button', '') + '-input');
+            console.log(this_id.replace('-button', '') + '-input');
+            text_input.select();
+            var hint_div = document.getElementById('rlg-hint');
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                hint_div.setAttribute('style', 'color:lightgreen');
+                hint_div.innerHTML = 'Copying to system clipboard was ' + msg;
+            } catch (err) {
+                hint_div.setAttribute('style', 'color:red');
+                hint_div.innerHTML = "Copying to system clipboard is not supported by your browser, you can copy it manually";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>This is H1</h1>
+<h2>This is H2</h2>
+<h3>This is H3</h3>
+<h1>This is H1</h1>
+<h2>This is H2</h2>
+<h3>This is H3</h3>
+<h1>This is H1</h1>
+<h2>This is H2</h2>
+<h3>This is H3</h3>
+<h1>This is H1</h1>
+<h2>This is H2</h2>
+<h3>This is H3</h3>
+<h1>This is H1</h1>
+<h2>This is H2</h2>
+<h3>This is H3</h3>
+
+<div id="rlg-panel">
+<!-- https://developer.mozilla.org/en/docs/Web/HTML/Element/Input -->
+    <div id="rlg-regenerate">
+        <label><input type="text" id="rlg-title-input"
+                   value="Default Page Title"/></label>
+        <label><input type="button" id="rlg-regenerate-button"
+                      onclick="regenerate()"
+                      value="Regenerate"/></label>
+    </div>
+    <div>
+        <label><input type="text" value="Generated HTML Link Text" id="rlg-html-input"  /></label>
+        <label><input type="button" value="HTML" id="rlg-html-button" onclick="copy_to_system_clipboard(this.id)" /></label>
+    </div>
+    <div>
+        <label><input type="text" value="Generated Markdown Link Text" id="rlg-markdown-input"/></label>
+        <label><input type="button" value="Markdown" id="rlg-markdown-button" onclick="copy_to_system_clipboard(this.id)" /></label>
+    </div>
+    <div>
+        <label><input type="text" value="Generated reST Link Text" id="rlg-rest-input"/></label>
+        <label><input type="button" value="reST" id="rlg-rest-button" onclick="copy_to_system_clipboard(this.id)" /></label>
+    </div>
+    <div>
+        <label><input type="text" value="Generated Orgmode Link Text" id="rlg-orgmode-input"/></label>
+        <label><input type="button" value="Orgmode" id="rlg-orgmode-button" onclick="copy_to_system_clipboard(this.id)" /></label>
+    </div>
+    <div>
+        <label><input type="text" value="Generated LaTeX Link Text" id="rlg-latex-input" /></label>
+        <label><input type="button" value="LaTeX" id="rlg-latex-button" onclick="copy_to_system_clipboard(this.id)" /></label>
+    </div>
+    <div id="rlg-hint"></div>
+</div>
+
+</body>
+</html>

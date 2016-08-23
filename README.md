@@ -30,7 +30,7 @@ all the link texts are updated and you can copy as you wish.
 
 ## Known issues
 
-* Firefox doesn't support direct copy to system clipboard. User have to copy the text manually.
+* <del>Firefox doesn't support direct copy to system clipboard. User have to copy the text manually.</del>
 
 ## 介绍
 
@@ -48,4 +48,4 @@ all the link texts are updated and you can copy as you wish.
 1. 可选步骤。如果自动提取的标题不如你意，可以手动修改后点`Regenerate`按钮重新生成链接再复制
 
 ## 已有的问题
-* Firefox好像不支持直接复制到系统剪贴板，用户需要手动复制。
+* <del>Firefox好像不支持直接复制到系统剪贴板，用户需要手动复制。</del>

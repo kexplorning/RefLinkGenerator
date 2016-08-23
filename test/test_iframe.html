@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            text-align:center;
+            width:100%;
+        }
+        iframe{
+            width: 800px;
+            height: 500px;
+        }
+    </style>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h2>测试使用 @noframes 标记是否可以使脚本在 iframe 内失效</h2>
+
+<div>
+    <iframe src="http://www.baidu.com" align=middle>
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+</div>
+
+<h2>经测试， @noframes 标记确实有效果</h2>
+
+</body>
+</html>
+
