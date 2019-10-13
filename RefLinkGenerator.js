@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name:en-us      RefLinkGenerator
 // @name:zh-cn      引用链接生成器
-// @version      0.1.3
+// @version      0.1.4
 // @description:en-us  Generate reference link in all kinds of markup languages like html, markdown etc and copy to system clipboard.
 // @description:zh-cn  提取网页标题和URL，快捷生成各类标记语言引用链接文本并复制到系统剪贴板
 // @homepageURL  https://github.com/kexplorning/RefLinkGenerator
