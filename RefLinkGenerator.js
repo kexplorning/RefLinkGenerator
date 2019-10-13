@@ -83,7 +83,7 @@ var markup = [ // Specific names for different kinds of markup languages
         button_name: "HTML",
         base_id: "rlg-html",
         makelink: function(page_title, page_url) {
-            return '<a href="' + page_url + '">' + page_title + '<\/a>';
+            return '<a href="' + page_url + '">' + page_title + '</a>';
         }
     },
     {   // markdown
