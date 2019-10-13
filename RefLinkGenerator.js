@@ -111,7 +111,7 @@ var markup = [ // Specific names for different kinds of markup languages
         button_name: "LaTeX",
         base_id: "rlg-latex",
         makelink: function(page_title, page_url) {
-            return '\\href{' + page_url + '}{' + page_title + '}';
+            return page_title + ' \\url{' + page_url + '}';
         }
     },
     {
